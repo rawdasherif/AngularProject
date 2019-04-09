@@ -1,5 +1,4 @@
-##run JSON server
-Run 
+to run json server --------------->
 json-server --watch server/products.json
 
 ## Development server
