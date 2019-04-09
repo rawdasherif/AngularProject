@@ -1,0 +1,35 @@
+<app-header></app-header>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<div class="container">
+  
+    <div class="row">
+        <div class="col-md-4" *ngFor='let product of products'>
+            <div class="product-item">
+              <div class="pi-img-wrapper">
+                  <a >
+                      <img  [src]='product. ProductPicUrl' >
+                  </a>            
+              </div>
+              <h2>{{ product.Name }}</h2>
+              <div class="pi-price"><h4>{{ product.Price }} $</h4></div>
+              <a href="javascript:;" class="btn add2cart">Add to cart</a>
+              <div class="sticker sticker-new"></div>
+            </div>
+  
+        </div>
+    </div> 
+
+</div>
+
+
+
+
+<br>
+<br>
+
+
+<app-footer></app-footer>
