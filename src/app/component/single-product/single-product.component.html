@@ -1,0 +1,30 @@
+
+<app-header></app-header>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"> 
+              <img  style="width: 350px"  [src]='product. ProductPicUrl' >
+            </div>
+            <div class="col-8">
+              <h2 class="text-primary">{{product.Name}}</h2>
+              <h5>{{product.Category}}</h5>
+              <h3 class="text-success">{{product.Price}} $</h3>     
+              <p>{{product.Description}}</p>
+              <label class="text-info">Weight Measure :</label>
+              <label> {{product.WeightMeasure}} {{product.WeightUnit}}</label><br>
+              <label class="text-info"> Width:</label>
+              <label> {{product.Width}} {{product.DimUnit}}</label><br>
+              <label class="text-info">Hight: </label>
+              <label> {{product.Height}}  {{product.DimUnit}}</label><br>
+              <h3>{{product.Status}}</h3>
+            </div>
+        </div>
+        <button (click)="onBack()"  class="btn btn-outline-success">Back</button>
+      </div>
+<app-footer></app-footer>
+

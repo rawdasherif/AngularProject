@@ -7,17 +7,15 @@
 <div class="container">
   
     <div class="row">
-        <div class="col-md-4" *ngFor='let product of products'>
+        <div  (click)="onselect(product)"  class="btn btn-light " style="width: 380px"  *ngFor='let product of products'>
             <div class="product-item">
-              <div class="pi-img-wrapper">
-                  <a >
-                      <img  [src]='product. ProductPicUrl' >
-                  </a>            
+              <div  (click)="onselect(product)" class="pi-img-wrapper">
+                      <img  style="width: 350px"  [src]='product. ProductPicUrl' >
               </div>
               <h2>{{ product.Name }}</h2>
               <div class="pi-price"><h4>{{ product.Price }} $</h4></div>
               <a href="javascript:;" class="btn add2cart">Add to cart</a>
-              <div class="sticker sticker-new"></div>
+              <div class="sticker sticker-new"></div><br>
             </div>
   
         </div>

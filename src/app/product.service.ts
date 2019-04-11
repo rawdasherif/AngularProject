@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { IProduct } from 'src/app/models/product';
 import { Observable } from 'rxjs';
+import 'rxjs/Rx';
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +18,18 @@ export class ProductService {
       return this.http.get<IProduct[]>(this._productUrl ,{headers: header},);
      
     }
+
+    // getProdectById(id: string){
+    //   const header = new HttpHeaders({'content-type': 'application/json'})
+    //   return this.http.get<IProduct[]>(this._productUrl,{headers: header},);
+    // }
+
+    getProdectById(id: string): Observable<IProduct> {
+      return this.getProducts()
+      .map((products: IProduct[]) => products.find(p => p.ProductId === id));
+    }
+  
+  
+  
+  
 }
