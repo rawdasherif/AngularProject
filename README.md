@@ -1,6 +1,5 @@
-# AngularProject
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+to run json server --------------->
+json-server --watch server/products.json
 
 ## Development server
 
