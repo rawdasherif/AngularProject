@@ -11,8 +11,8 @@
                 <span class="badge badge-light">{{cartItemCount}}</span>
               </a>
             
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"  *ngFor='let li of cartlist'>
-                <a class="dropdown-item" href="#">{{ li.Name }}</a>
+              <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink" >
+                <li *ngFor="let li of cartlist"><a class="dropdown-item" href="#">{{ li.Name }}</a></li>
               </div>
             </li>
 
