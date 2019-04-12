@@ -4,8 +4,18 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">   
           <li><a  (click)="gotoHome()" class="nav-link"> <b>Home </b></a></li>
-          <li><a  (click)="goto()" class="nav-link"> <b>Cart </b>
-             <span class="badge badge-light">{{cartItemCount}}</span></a></li>
+          <li><a  (click)="goto()" class="nav-link"> <b>Cart-Page</b></a></li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                cart
+                <span class="badge badge-light">{{cartItemCount}}</span>
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink"  *ngFor='let li of cartlist'>
+                <a class="dropdown-item" href="#">{{ li.Name }}</a>
+              </div>
+            </li>
+
              <li><a (click)="goToWish()" class="nav-link"><b>wishlist</b></a></li>
           <li><a  (click)="logout()" class="nav-link">Logout</a></li>
         </ul>
