@@ -34,4 +34,12 @@ export class HeaderComponent implements OnInit {
   this._router.navigate(['wish']);
  }
 
+ gotoHome(){
+  this._router.navigate(['home']);
+ }
+
+ logout(){
+  this._router.navigate(['login']);
+ }
+
 }

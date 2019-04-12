@@ -2,11 +2,12 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">      
+        <ul class="navbar-nav ml-auto">   
+          <li><a  (click)="gotoHome()" class="nav-link"> <b>Home </b></a></li>
           <li><a  (click)="goto()" class="nav-link"> <b>Cart </b>
              <span class="badge badge-light">{{cartItemCount}}</span></a></li>
              <li><a (click)="goToWish()" class="nav-link"><b>wishlist</b></a></li>
-          <li><a  class="nav-link">Logout</a></li>
+          <li><a  (click)="logout()" class="nav-link">Logout</a></li>
         </ul>
       </div>
     </div>
