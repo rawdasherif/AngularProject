@@ -12,6 +12,7 @@
                         <th>Name  </th>
                         <th>Price</th>
                         <th>Quantity</th>
+                        <th>Total Price</th>
                         <th>Remove</th>
                       </tr>
                       </thead>
@@ -20,6 +21,7 @@
                         <td class="text-center">{{product.Name}}</td>
                         <td>{{product.Price}}</td>
                         <td>{{product.Quantity}}</td>
+                        <td>{{product.Quantity * product.Price}}</td>
                         <td>
                             <div class="form-inline">
                             <button type="button" (click)="RemoveProduct(product)" class="btn btn-danger">x</button>
