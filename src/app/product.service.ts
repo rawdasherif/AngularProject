@@ -19,16 +19,23 @@ export class ProductService {
      
     }
 
-    // getProdectById(id: string){
-    //   const header = new HttpHeaders({'content-type': 'application/json'})
-    //   return this.http.get<IProduct[]>(this._productUrl,{headers: header},);
-    // }
-
     getProdectById(id: string): Observable<IProduct> {
       return this.getProducts()
       .map((products: IProduct[]) => products.find(p => p.ProductId === id));
     }
   
+    addProductToCart(prodcuts: any) {
+      localStorage.setItem("product", JSON.stringify(prodcuts));
+    }
+    getProductFromCart() {
+      return JSON.parse(localStorage.getItem('product'));
+  }
+
+    removeProductFromCart() {
+     return localStorage.removeItem("product");
+
+        
+}
   
   
   

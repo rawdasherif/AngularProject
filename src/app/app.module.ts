@@ -12,6 +12,7 @@ import { FooterComponent } from './component/navbar/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import {ProductService} from './product.service';
 import { SingleProductComponent } from './component/single-product/single-product.component';
+import { CartPageComponent } from './component/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SingleProductComponent } from './component/single-product/single-produc
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SingleProductComponent
+    SingleProductComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,
