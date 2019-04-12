@@ -1,3 +1,32 @@
-<p>
-  wishlist works!
-</p>
+<app-header></app-header>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+          <div class="container">               
+                    <table class="table">
+                      <thead class="thead-dark">
+                      <tr>
+                        <th>Image</th>
+                        <th>Name  </th>
+                        <th>Price</th>
+                        <th>Remove</th>
+                      </tr>
+                      </thead>
+                      <tr *ngFor="let product of productAddedToWish;let q = index">
+                        <td><img src="{{product.ProductPicUrl}}" width="250px;" height="270px;"/></td>
+                        <td class="text-center">{{product.Name}}</td>
+                        <td>{{product.Price}}</td>
+                        <td>
+                            <div class="form-inline">
+                            <button type="button" (click)=" RemoveFromWish(product)" class="btn btn-danger">x</button>
+                            </div>
+                       </td>
+                      </tr>
+                    </table>
+            </div>
+
+ <app-footer></app-footer>
+
+           

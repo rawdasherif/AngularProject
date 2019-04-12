@@ -14,7 +14,8 @@ import {ProductService} from './product.service';
 import { SingleProductComponent } from './component/single-product/single-product.component';
 import { CartPageComponent } from './component/cart-page/cart-page.component';
 import {CounterService} from './counter.service';
-import { WishlistComponent } from './wishlist/wishlist.component';
+import { WishlistComponent } from './component/wishlist/wishlist.component';
+import {WishlistService} from './wishlist.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [ProductService,CounterService],
+  providers: [ProductService,CounterService,WishlistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

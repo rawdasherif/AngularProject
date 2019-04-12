@@ -3,6 +3,7 @@ import { ProductService } from 'src/app/product.service';
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/product';
 import {CounterService} from 'src/app/counter.service';
+import {WishlistService} from 'src/app/wishlist.service';
 
 
 @Component({
@@ -13,10 +14,11 @@ import {CounterService} from 'src/app/counter.service';
 export class HomeComponent implements OnInit {
   public products =[];
   public productAddedTocart=[];
+  public productAddedToWish=[];
   public cartItemCountarr=[];
   public cartItemCount:number ;
 
-  constructor(private _productService: ProductService,private router:Router,private counter:CounterService) { }
+  constructor(private _wishlist:WishlistService,private _productService: ProductService,private router:Router,private counter:CounterService) { }
 
   ngOnInit() {
     this._productService.getProducts().subscribe(
@@ -36,7 +38,7 @@ export class HomeComponent implements OnInit {
     
   }
 
-  AddCart(product:IProduct )
+  AddCart(product:IProduct)
             {   
             this.productAddedTocart=this._productService.getProductFromCart();
             if(this.productAddedTocart==null)
@@ -72,6 +74,30 @@ export class HomeComponent implements OnInit {
                       }
                     }
             }
+            window.location.reload();
             
+}
+AddWish(product:IProduct){
+  this.productAddedToWish=this._wishlist.getProductFromWish();
+  if(this.productAddedToWish==null)
+    {
+        this.productAddedToWish=[];
+        this.productAddedToWish.push(product);
+        this._wishlist.addProductToWish(this.productAddedToWish); 
+    }
+   else
+    {
+         let tempProduct=this.productAddedToWish.find(p=>p.ProductId==product.ProductId);
+         if(tempProduct==null)
+          {
+           this.productAddedToWish.push(product);
+           this._wishlist.addProductToWish(this.productAddedToWish);
+          }
+          else
+          {
+            window.alert("already in wishlist !");
+          }
+  }
+
 }
 }

@@ -29,5 +29,9 @@ export class HeaderComponent implements OnInit {
  goto(){
   this._router.navigate(['cart']);
  }
+ 
+ goToWish(){
+  this._router.navigate(['wish']);
+ }
 
 }
