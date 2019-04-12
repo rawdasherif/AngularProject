@@ -29,7 +29,7 @@ export class ProductService {
     }
     getProductFromCart() {
       return JSON.parse(localStorage.getItem('product'));
-  }
+    }
 
     removeProductFromCart() {
      return localStorage.removeItem("product");
