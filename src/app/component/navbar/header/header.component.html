@@ -3,9 +3,10 @@
     <div class="container-fluid">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li><a (click)="goto()" class="nav-link">Cart </a></li>
           <li><a href="#" class="nav-link">wishlist</a></li>
           <li><a  class="nav-link">Logout</a></li>
+          <li><a type="button" (click)="goto()" class="nav-link"> <b>Cart </b>
+             <span class="badge badge-light">{{cartItemCount}}</span></a></li>
         </ul>
       </div>
     </div>

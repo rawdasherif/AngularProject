@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {ProductService} from './product.service';
 import { SingleProductComponent } from './component/single-product/single-product.component';
 import { CartPageComponent } from './component/cart-page/cart-page.component';
+import {CounterService} from './counter.service';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { CartPageComponent } from './component/cart-page/cart-page.component';
     HeaderComponent,
     FooterComponent,
     SingleProductComponent,
-    CartPageComponent
+    CartPageComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { CartPageComponent } from './component/cart-page/cart-page.component';
     NgbModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,CounterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
