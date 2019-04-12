@@ -56,7 +56,9 @@ export class HeaderComponent implements OnInit {
   this.cartlist.splice(index,1);
   this._productService.removeProductFromCart();
   this._productService.addProductToCart(this.cartlist);
+
   window.location.reload();
+
 
  }
 

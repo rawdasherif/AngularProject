@@ -11,6 +11,7 @@ import { IProduct } from 'src/app/models/product';
 })
 export class CartPageComponent implements OnInit {
   public productAddedTocart=[];
+  public totalprice=0; 
 
   constructor(private _productService:ProductService,private router:Router) { }
 
@@ -18,6 +19,10 @@ export class CartPageComponent implements OnInit {
     this.productAddedTocart=this._productService.getProductFromCart();
     this._productService.removeProductFromCart();
     this._productService.addProductToCart(this.productAddedTocart);
+    for(let i of this.productAddedTocart){
+      this.totalprice=i.Quantity*i.Price+this.totalprice;
+      
+    }
   }
 
   RemoveProduct(product:IProduct)
